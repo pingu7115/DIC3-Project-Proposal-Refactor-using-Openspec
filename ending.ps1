@@ -21,7 +21,7 @@ Write-Host "  [PASS] All OpenSpec specifications and changes are fully compliant
 
 # 3. Task Completion Audit
 Write-Host "`n[Step 2/4] Auditing Tasks Completion..." -ForegroundColor Yellow
-$tasksFile = "openspec\changes\01-proposal-workflow-refactor\tasks.md"
+$tasksFile = (Get-ChildItem -Path @("openspec\changes\*\tasks.md", "openspec\changes\archive\*\tasks.md") -ErrorAction SilentlyContinue | Select-Object -Last 1).FullName
 if (Test-Path $tasksFile) {
     $content = Get-Content $tasksFile
     $total = ($content | Select-String "\[[ xX]\]").Count

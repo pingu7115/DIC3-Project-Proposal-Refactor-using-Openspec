@@ -10,8 +10,8 @@
 ## 2. Proposal Core Formulation (DIC3 Requirement 2)
 
 - [x] 2.1 Refactor A to F Abstract (~500 Chinese characters) with explicit `[A]` through `[F]` labels.
-- [x] 2.2 Incorporate authoritative 2025–2026 empirical threat metrics (NSB 2025, IBM 2026, Mandiant M-Trends 2026, Tsegai et al. 2025).
-- [x] 2.3 Formulate Three Core Innovations modeled after the DietSense paradigm (Evidence Fusion, ATT&CK Constraints, Proactive Escalation).
+- [x] 2.2 Incorporate authoritative 2025–2026 empirical threat metrics (NSB 2025, IBM 2026, Introduction §2.1.2 Mandiant M-Trends 2026, Tsegai et al. 2026).
+- [x] 2.3 Formulate Five Cores (M1–M5) and derive three system innovations (Evidence Fusion, ATT&CK Constraints, Proactive Escalation).
 - [x] 2.4 Articulate Three Critical Engineering Trade-offs (Miss Rate vs. Escalation Rate, GBDT vs. LLM, Rules vs. Autonomy).
 - [x] 2.5 Synthesize Ten Deep Understanding Details connecting domain SOC realities with system design choices.
 
@@ -49,3 +49,13 @@
 - [x] 7.1 Execute `openspec validate --all` to confirm schema and dependency compliance.
 - [x] 7.2 Verify remote origin points exclusively to `pingu7115/DIC3-Project-Proposal-Refactor-using-Openspec.git`.
 - [x] 7.3 Stage, commit, and push refactored repository assets.
+
+## 8. DIC3 Compliance Fixes
+
+- [x] 8.1 Expand 3 Cores to 5 Cores (M1–M5) with explicit system mappings in `docs/proposal.md` and `README.md`, removing DietSense references.
+- [x] 8.2 Fill `openspec/config.yaml` with required project context, 5 Cores, dataset references, and proposal rules.
+- [x] 8.3 Add missing spec scenarios for Rule R3 (Post-Compromise Foothold) and Rule R5 (Multi-Stage Progression) in delta and main specs.
+- [x] 8.4 Condense Abstract A–F to ~500 words (480–520 words) preserving required data points, citations, and Expected Outcomes format.
+- [x] 8.5 Fix cross-artifact inconsistencies (add DESIGN.md prefixes in §1.3 table, update Tsegai citation year to 2026, adjust M-Trends scope, update §2.6.5 wording).
+- [x] 8.6 Verify OpenSpec CLI compliance with strict validation and update actual validation output in `README.md`.
+

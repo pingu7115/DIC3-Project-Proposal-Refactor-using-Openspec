@@ -4,9 +4,9 @@
 
 This proposal formalizes and refactors the **AI SOC Analyst Agent** project proposal according to the Spec-Driven Development (SDD) standard introduced in DIC3. 
 
-In enterprise Security Operations Centers (SOCs), Tier-1 analysts face crippling alert fatigue, processing tens of thousands of alerts daily where only a tiny fraction represent true attacks. Traditional machine learning models lack attack-chain context and interpretability, whereas standalone LLM agents suffer from high miss rates (>40.4% in recent empirical benchmarks like Tsegai et al., 2025) and premature closure on missing logs. 
+In enterprise Security Operations Centers (SOCs), Tier-1 analysts face crippling alert fatigue, processing tens of thousands of alerts daily where only a tiny fraction represent true attacks. Traditional machine learning models lack attack-chain context and interpretability, whereas standalone LLM agents suffer from high miss rates (>40.4% in recent empirical benchmarks like Tsegai et al., 2026) and premature closure on missing logs. 
 
-To transition from an ad-hoc academic proposal into an engineered, verifiable, and extensible system, this change introduces OpenSpec formal specifications, defines explicit behavioral contracts across all triage and fusion stages, and refactors core documentation (Abstract A-F, 3 Cores, 3 Trade-offs, 10 Details, Introduction, and Related Work) to ground the research in rigorous empirical baselines.
+To transition from an ad-hoc academic proposal into an engineered, verifiable, and extensible system, this change introduces OpenSpec formal specifications, defines explicit behavioral contracts across all triage and fusion stages, and refactors core documentation (Abstract A-F, 5 Cores, 3 Trade-offs, 10 Details, Introduction, and Related Work) to ground the research in rigorous empirical baselines.
 
 ## What Changes
 
@@ -14,8 +14,8 @@ To transition from an ad-hoc academic proposal into an engineered, verifiable, a
    - Establish baseline specifications (`specs/triage-workflow` and `specs/evidence-fusion`) to define verifiable operational semantics for incident intake, multi-hop investigation, ML classification, domain rule evaluation, and human-in-the-loop escalation.
    - Convert the unstructured `DESIGN.md` into actionable OpenSpec technical workflows, execution graphs, and decision protocols.
 2. **Project Proposal Core Refactoring**:
-   - **Abstract (A to F)**: Re-anchor the ~500-word abstract with 2025–2026 authoritative threat data (National Security Bureau 2025 report on 2.63M daily attacks; IBM 2026 Cost of a Data Breach at $4.99M; Mandiant M-Trends 2026 median dwell time of 14 days), clearly demarcating `[A]` Attention Getter, `[B]` But, `[C]` Cure, `[D]` Development, `[E]` Experiments, and `[F]` Findings / Expected Outcomes.
-   - **3 Core Innovations**: Explicitly articulate the 3 cores (Evidence Fusion Architecture, Knowledge-Driven Kill Chain Constraints, and Uncertainty-Aware Proactive Escalation) modeled after the DietSense innovation paradigm.
+   - **Abstract (A to F)**: Re-anchor the ~500-word abstract with 2025–2026 authoritative threat data (National Security Bureau 2025 report on 2.63M daily attacks; IBM 2026 Cost of a Data Breach at $4.99M; Introduction §2.1.2 引用 Mandiant M-Trends 2026 median dwell time of 14 days), clearly demarcating `[A]` Attention Getter, `[B]` But, `[C]` Cure, `[D]` Development, `[E]` Experiments, and `[F]` Findings / Expected Outcomes.
+   - **5 Cores**: Formulate the Five Cores (M1 Assume Breach, M2 Attack Chain Context, M3 Asymmetric Error Costs, M4 TTPs over IOCs, M5 Verifiable Automation) and their derivation into three system innovations.
    - **3 Trade-offs**: Formalize the primary engineering tensions (Miss Rate vs. Escalation Rate, GBDT Statistical Efficiency vs. LLM Contextual Reasoning, Deterministic Rules vs. Agent Autonomy).
    - **10 Details**: Detail the 10 deep understanding questions bridging operational SOC reality with agent architectural decisions.
 3. **Introduction and Related Work Refactoring**:
@@ -38,3 +38,4 @@ To transition from an ad-hoc academic proposal into an engineered, verifiable, a
 - **Codebase & Specs**: Adds `openspec/` specification directory, `startup.sh`, `ending.sh`, and updates `docs/proposal.md`, `DESIGN.md`, and `README.md`.
 - **Runtime Environment**: Targets Node.js v24+ for OpenSpec CLI execution and Python 3.10+ for data profiling and triage agents.
 - **Git Repository**: Pushes all refactored artifacts directly to the student's individual repository (`pingu7115/DIC3-Project-Proposal-Refactor-using-Openspec.git`) without modifying the upstream group repository.
+

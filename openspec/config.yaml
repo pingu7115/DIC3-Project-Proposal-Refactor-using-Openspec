@@ -1,32 +1,10 @@
 schema: spec-driven
-
-# Project context (optional)
-# Add only constraints that should guide OpenSpec artifacts and workflows.
-# Include constraints an agent cannot infer by reading the code.
-# Keep general project documentation and discoverable codebase facts out.
-# Example:
-#   context: |
-#     Designs and tasks must cover Windows, macOS, and Linux
-#     Write all artifacts in Spanish
-
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always state what is out of scope
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
-
-# Per-operation guidance (optional)
-# Add advisory guidance for how apply and archive work should be conducted.
-# This is separate from artifact rules above.
-# Example:
-#   operations:
-#     apply:
-#       guidance:
-#         - Keep test summaries concise
-#     archive:
-#       guidance:
-#         - Summarize the archive outcome before finishing
+context: |
+  專案：AI SOC Analyst Agent（AIoT 期末專題第 16 組，Proposal 階段）
+  目標：結合 GBDT 分級、MITRE ATT&CK 知識與 LLM 推理，對 SOC 事件做 TP/BP/FP 分級，不確定時升級給人工
+  5 Cores：M1 Assume Breach、M2 攻擊鏈脈絡、M3 錯誤成本不對稱、M4 TTPs 優先於 IOCs、M5 可驗證的自動化
+  資料集：Microsoft GUIDE、ExCyTIn-Bench
+  文件以繁體中文撰寫，技術名詞保留英文
+rules:
+  proposal:
+    - Proposal 階段尚未實驗，只能寫 Expected Outcomes，不得出現實驗數據

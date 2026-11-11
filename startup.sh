@@ -65,8 +65,9 @@ fi
 # 5. Handover Briefing & Next Actions
 echo ""
 echo "[Step 5/5] Active Sprint Handover & Next Actions:"
-echo "  - Active Change: openspec/changes/01-proposal-workflow-refactor"
-echo "  - Core Proposals: docs/proposal.md (A-F Abstract, 3 Cores, 3 Trade-offs, 10 Details)"
-echo "  - Technical Architecture: DESIGN.md & openspec/changes/01-proposal-workflow-refactor/design.md"
+echo "  - Completed Change: openspec/changes/archive/2026-11-11-01-proposal-workflow-refactor"
+echo "  - Core Proposals: docs/proposal.md (A-F Abstract, 5 Cores, 3 Trade-offs, 10 Details)"
+echo "  - System Specifications: openspec/specs/ (evidence-fusion, triage-workflow)"
 echo "  - Ready to develop! When finishing your shift, run ./ending.sh"
 echo "================================================================="
+

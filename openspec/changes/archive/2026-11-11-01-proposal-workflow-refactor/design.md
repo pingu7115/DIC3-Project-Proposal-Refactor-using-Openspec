@@ -130,3 +130,4 @@ Output: (verdict, confidence, needs_human_review, recommended_actions)
 | **TP Miss Rate vs. Escalation Rate** | Escalating 100% of alerts achieves 0% miss rate but overwhelms SOC analysts; escalating 0% risks catastrophic compromise. | Characterize Pareto frontier on validation sets; allow SOC managers to set threshold $\tau$ based on available Tier-1 analyst shifts. |
 | **Statistical ML vs. LLM Context** | GBDT is computationally lightweight ($<10$ ms) but context-blind; LLMs provide deep narrative but add latency (2–8 s) and cost. | GBDT acts as fast baseline filter; LLM acts as reasoning aggregator and investigator, bounded by strict token budgets. |
 | **Rule Rigidity vs. Agent Flexibility** | Strict rules (R1~R5) may escalate benign stress tests or internal red teaming. | Rules flag `needs_human_review` rather than hardcoding a destructive response, allowing human analysts to annotate benign exceptions. |
+

@@ -30,9 +30,17 @@ The decision engine MUST enforce deterministic high-risk rules (R1 to R5) derive
 - **WHEN** an incident exhibits evidence of both Credential Access and Lateral Movement within the same attack window
 - **THEN** rule R2 fires, escalating the incident immediately with recommendations to revoke active sessions and isolate affected subnetworks.
 
+#### Scenario: Post-Compromise Foothold (R3)
+- **WHEN** an incident contains Initial Access together with Execution, Persistence, or Privilege Escalation
+- **THEN** rule R3 fires, marking `high_risk = True` and escalating the incident for host-level investigation.
+
 #### Scenario: Evidence Removal Detection (R4)
 - **WHEN** evidence indicates log clearing or event deletion activities (ATT&CK T1070)
 - **THEN** rule R4 fires, invalidating any "no negative records found" conclusion and escalating for forensic log recovery.
+
+#### Scenario: Multi-Stage Progression (R5)
+- **WHEN** an incident covers four or more distinct ATT&CK Tactics
+- **THEN** rule R5 fires, marking `high_risk = True` and prohibiting autonomous closure as FP or BP.
 
 ### Requirement: Assume Breach Uncertainty Escalation
 
@@ -45,3 +53,4 @@ The system MUST trigger human review whenever confidence falls below threshold $
 #### Scenario: Analyst Feedback Capture
 - **WHEN** a human analyst overrides or confirms an agent triage recommendation
 - **THEN** the system logs the analyst verdict, rationale, and corrected feature representations into the active historical vector store for continuous few-shot alignment and model retraining.
+

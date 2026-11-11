@@ -41,8 +41,8 @@ Write-Host "`n[Step 4/5] Auditing OpenSpec Governance & Specifications..." -Fore
 
 # 5. Handover Briefing
 Write-Host "`n[Step 5/5] Active Sprint Handover & Next Actions:" -ForegroundColor Yellow
-Write-Host "  - Active Change: openspec/changes/01-proposal-workflow-refactor" -ForegroundColor Green
-Write-Host "  - Core Proposals: docs/proposal.md (A-F Abstract, 3 Cores, 3 Trade-offs, 10 Details)" -ForegroundColor Green
-Write-Host "  - Technical Architecture: DESIGN.md & openspec/changes/01-proposal-workflow-refactor/design.md" -ForegroundColor Green
+Write-Host "  - Completed Change: openspec/changes/archive/2026-11-11-01-proposal-workflow-refactor" -ForegroundColor Green
+Write-Host "  - Core Proposals: docs/proposal.md (A-F Abstract, 5 Cores, 3 Trade-offs, 10 Details)" -ForegroundColor Green
+Write-Host "  - System Specifications: openspec/specs/ (evidence-fusion, triage-workflow)" -ForegroundColor Green
 Write-Host "  - Ready to develop! When finishing your shift, run ./ending.ps1" -ForegroundColor Green
 Write-Host "=================================================================" -ForegroundColor Cyan

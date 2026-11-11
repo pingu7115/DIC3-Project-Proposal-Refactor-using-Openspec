@@ -29,7 +29,7 @@ echo "  [PASS] All OpenSpec specifications and changes are fully compliant!"
 # 3. Task Completion Audit
 echo ""
 echo "[Step 2/4] Auditing Tasks Completion..."
-TASKS_FILE="openspec/changes/01-proposal-workflow-refactor/tasks.md"
+TASKS_FILE=$(ls openspec/changes/*/tasks.md openspec/changes/archive/*/tasks.md 2>/dev/null | tail -n 1 || echo "")
 if [ -f "$TASKS_FILE" ]; then
   TOTAL_TASKS=$(grep -c "\[[ xX]\]" "$TASKS_FILE" || echo 0)
   DONE_TASKS=$(grep -c "\[[xX]\]" "$TASKS_FILE" || echo 0)
@@ -68,3 +68,4 @@ echo "================================================================="
 echo "  [SUCCESS] All artifacts validated, committed, and synced!"
 echo "  Repository: $REMOTE_URL"
 echo "================================================================="
+

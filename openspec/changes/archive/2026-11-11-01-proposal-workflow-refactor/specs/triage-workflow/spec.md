@@ -45,3 +45,4 @@ The system MUST produce a comprehensive, auditable incident triage report in bot
 #### Scenario: Triage Report Generation
 - **WHEN** the triage decision and recommended actions are finalized
 - **THEN** the system outputs a report including predicted class (TP / BP / FP), confidence score, SHAP feature rankings, mapped ATT&CK techniques, evidence source citations, and human review status.
+

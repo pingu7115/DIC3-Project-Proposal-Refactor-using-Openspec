@@ -15,8 +15,8 @@ Agent 針對資安事件提供 TP / BP / FP 分級、ATT&CK 攻擊鏈對應與�
 | 目錄 / 文件 | 說明 |
 |---|---|
 | [`openspec/`](openspec/) | **OpenSpec 規格驅動開發根目錄**：包含全域配置、基準規格（`specs/`）與提案變更（`changes/`） |
-| [`openspec/changes/01-proposal-workflow-refactor/`](openspec/changes/01-proposal-workflow-refactor/) | **DIC3 核心變更提案**：包含 `proposal.md`、`specs/`、`design.md` 與 `tasks.md`（合規檢核表） |
-| [`docs/proposal.md`](docs/proposal.md) | **重構後之完整 Proposal**：A~F 專業摘要、3 大核心創新、3 大權衡、10 大深度問題、密集編號 Introduction 與 Related Work |
+| [`openspec/changes/archive/2026-11-11-01-proposal-workflow-refactor/`](openspec/changes/archive/2026-11-11-01-proposal-workflow-refactor/) | **DIC3 核心變更提案（已歸檔）**：包含 `proposal.md`、`specs/`、`design.md` 與 `tasks.md`（合規檢核表） |
+| [`docs/proposal.md`](docs/proposal.md) | **重構後之完整 Proposal**：A~F 專業摘要、5 大核心、3 大權衡、10 大深度問題、密集編號 Introduction 與 Related Work |
 | [`DESIGN.md`](DESIGN.md) | **系統技術設計**：8 大核心元件、Planner 動態決策樹、Algorithm 1/2 虛擬碼、GUIDE 評估計畫 |
 | [`startup.sh`](startup.sh) | **營運自動化 - 開發啟動 SOP**：自動拉取更新、驗證 Node/OpenSpec 環境、檢查規格並提示接續工作 |
 | [`ending.sh`](ending.sh) | **營運自動化 - 開發交接 SOP**：全面自動執行 `openspec validate`、檢查 Tasks 完成度、自動 Commit 並 Push |
@@ -33,7 +33,14 @@ Agent 針對資安事件提供 TP / BP / FP 分級、ATT&CK 攻擊鏈對應與�
 - **【E. Experiments】**：微軟 GUIDE（100 萬起事件真實標籤）與 ExCyTIn-Bench（SQL 調查日誌），評估 Macro-F1、TP 漏判率、升級率與消融實驗。
 - **【F. Expected Outcomes】**：預期 TP 漏判率顯著低於純 GBDT 與純 LLM；量化「漏判率 vs. 升級率」取捨曲線。
 
-### 2. 三大核心創新（3 Cores，對齊 DietSense 範式）
+### 2. 五大核心（5 Cores）
+1. **M1. Assume Breach（假設已遭入侵）**：不預設環境純淨，「查無紀錄」不等於無攻擊；遇到查無紀錄時擴大查詢範圍，預算耗盡仍未確認即觸發升級（對應 Rule R4、Algorithm 1 L05–L09、L18）。
+2. **M2. 看事件與攻擊鏈脈絡，而非單一告警**：單一告警意義有限，以事件為核心分析單位實施多層聚合，依攻擊推進階段動態評估威脅進程（對應 Evidence Store、特徵工程、Rules R1–R5）。
+3. **M3. 錯誤成本不對稱**：漏判真實攻擊的代價遠高於誤報，以 TP 漏判率為首要指標，高風險情境偏向升級（對應 NFR2、Algorithm 2 L06–L08）。
+4. **M4. 看攻擊行為（TTPs），而非容易替換的指標（IOCs）**：以 MITRE ATT&CK 技術作為知識核心單位，避免模型特徵過度依賴單純網路指標（對應 ATT&CK 向量庫、特徵工程）。
+5. **M5. 自動化要可驗證，人保留最終判斷**：每個結論皆附帶結構化證據鏈，結論衝突時明確標記並提供「需人工複核」狀態（對應 NFR1、Algorithm 2 L07–L11）。
+
+#### 由五大核心推導出的三項系統創新
 1. **Multi-source Evidence Fusion（多源證據融合架構）**：結合統計 ML 高吞吐分級能力與 LLM 脈絡推理，克服單一模型缺陷。
 2. **Knowledge-Constrained Attack Chain Reasoning（ATT&CK 知識約束）**：實體嵌入 ATT&CK 本體與 NIST SP 800-61 Rev. 3，以高風險規則（Rules R1~R5）進行後段階段硬約束。
 3. **Uncertainty-Aware Proactive Escalation（不確定性感知與人機協同升級）**：貫徹 Assume Breach，將「日誌缺失/衝突」視為升級信號，保護分析師免於自動化自滿。
@@ -88,12 +95,11 @@ flowchart LR
 ```bash
 openspec validate --all
 ```
-預期輸出：
+實際輸出：
 ```text
-✓ change/01-proposal-workflow-refactor
 ✓ spec/evidence-fusion
 ✓ spec/triage-workflow
-Totals: 3 passed, 0 failed (3 items)
+Totals: 2 passed, 0 failed (2 items)
 ```
 
 ### 4. 開發交接與推送腳本
