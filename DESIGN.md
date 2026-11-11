@@ -1,6 +1,7 @@
 # DESIGN.md — AI SOC Analyst Agent
 
-> 狀態：**Proposal 階段**（v0.8）。本文件從 Proposal 開始建立並隨開發持續更新。
+> 狀態：**Proposal 階段**（v0.8 / DIC3 Refactored）。本文件從 Proposal 開始建立並隨開發持續更新。
+> **OpenSpec SDD 規範對齊**：本系統設計已完整轉換為 OpenSpec 規格驅動開發工作流程（見 `openspec/changes/01-proposal-workflow-refactor/` 與 `openspec/specs/`）。
 > 文中的文獻編號（例如 [3]）對應 [`docs/proposal.md`](docs/proposal.md) §6 References。
 > 標示「（規劃）」的項目尚未實作；標示「（待確認）」的項目需在下載資料或實作後驗證。
 
