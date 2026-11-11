@@ -16,6 +16,7 @@ Agent 針對資安事件提供 TP / BP / FP 分級、ATT&CK 攻擊鏈對應與�
 |---|---|
 | [`openspec/`](openspec/) | **OpenSpec 規格驅動開發根目錄**：包含全域配置、基準規格（`specs/`）與提案變更（`changes/`） |
 | [`openspec/changes/archive/2026-11-11-01-proposal-workflow-refactor/`](openspec/changes/archive/2026-11-11-01-proposal-workflow-refactor/) | **DIC3 核心變更提案（已歸檔）**：包含 `proposal.md`、`specs/`、`design.md` 與 `tasks.md`（合規檢核表） |
+| [`openspec/changes/archive/2026-11-11-align-design-algorithms/`](openspec/changes/archive/2026-11-11-align-design-algorithms/) | **演算法與 DESIGN.md 對齊（已歸檔）**：對齊 Algorithm 1/2 偽代碼與說明，補齊高風險安全重標註規格 |
 | [`docs/proposal.md`](docs/proposal.md) | **重構後之完整 Proposal**：A~F 專業摘要、5 大核心、3 大權衡、10 大深度問題、密集編號 Introduction 與 Related Work |
 | [`DESIGN.md`](DESIGN.md) | **系統技術設計**：8 大核心元件、Planner 動態決策樹、Algorithm 1/2 虛擬碼、GUIDE 評估計畫 |
 | [`startup.sh`](startup.sh) | **營運自動化 - 開發啟動 SOP**：自動拉取更新、驗證 Node/OpenSpec 環境、檢查規格並提示接續工作 |
@@ -27,9 +28,9 @@ Agent 針對資安事件提供 TP / BP / FP 分級、ATT&CK 攻擊鏈對應與�
 
 ### 1. 專業摘要 (A 到 F，約 500 字)
 - **【A. Attention Getter】**：引用 2025 年國安局報告（中共每日侵擾關鍵基礎設施 263 萬次，+6%）與 IBM 2026 年報告（資料外洩平均成本達 499 萬美元新高，處理耗時 247 天）。
-- **【B. But】**：告警疲勞造成分析師漏看真威脅；五種主流 tool-using LLM 策略漏判率高達 40.4% [3]，查無紀錄時易過早結案。
+- **【B. But】**：告警疲勞造成分析師漏看真威脅；五種主流 tool-using LLM 策略漏判率至少 40.4% [3]，查無紀錄時易過早結案。
 - **【C. Cure】**：提出 AI SOC Analyst Agent，三方整合 ML 分級、MITRE ATT&CK 知識與 LLM 推理。
-- **【D. Development】**：FastAPI 架構、LightGBM（GBDT）、SHAP 特徵解釋、ATT&CK 向量庫檢索、證據融合與主動升級機制。
+- **【D. Development】**：LLM Agent（tool use）、LightGBM（GBDT）、SHAP 特徵解釋、ATT&CK 向量庫（Chroma）檢索、證據融合與主動升級機制、Streamlit 介面。
 - **【E. Experiments】**：微軟 GUIDE（100 萬起事件真實標籤）與 ExCyTIn-Bench（SQL 調查日誌），評估 Macro-F1、TP 漏判率、升級率與消融實驗。
 - **【F. Expected Outcomes】**：預期 TP 漏判率顯著低於純 GBDT 與純 LLM；量化「漏判率 vs. 升級率」取捨曲線。
 
