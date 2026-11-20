@@ -18,6 +18,11 @@ Agent 針對資安事件提供 TP / BP / FP 分級、ATT&CK 攻擊鏈對應與�
 | [`openspec/changes/archive/2026-11-11-01-proposal-workflow-refactor/`](openspec/changes/archive/2026-11-11-01-proposal-workflow-refactor/) | **DIC3 核心變更提案（已歸檔）**：包含 `proposal.md`、`specs/`、`design.md` 與 `tasks.md`（合規檢核表） |
 | [`openspec/changes/archive/2026-11-11-align-design-algorithms/`](openspec/changes/archive/2026-11-11-align-design-algorithms/) | **演算法與 DESIGN.md 對齊（已歸檔）**：對齊 Algorithm 1/2 偽代碼與說明，補齊高風險安全重標註規格 |
 | [`docs/proposal.md`](docs/proposal.md) | **重構後之完整 Proposal**：A~F 專業摘要、5 大核心、3 大權衡、10 大深度問題、密集編號 Introduction 與 Related Work |
+| [`docs/01-proposal-analysis.md`](docs/01-proposal-analysis.md) | **專題提案系統性解析**：依據作業規範核心維度檢視符合度，提供 A2Z SOP 26 字母結構深度解析與亮點建議 |
+| [`docs/02-infographic.pdf`](docs/02-infographic.pdf) | **高密度架構資訊圖表**：A4 橫式單頁高密度呈現八大模組、流程、虛擬碼、26 字母映射與評估計畫（提供 [HTML 版](docs/02-infographic.html)） |
+| [`docs/03-abstract-refined.md`](docs/03-abstract-refined.md) | **多層次精煉專業摘要**：包含 A–F 加強版、預期貢獻與學術價值，以及 450–520 字連續單段重點摘要 |
+| [`docs/04-ieee-abstract.md`](docs/04-ieee-abstract.md) | **IEEE Transactions 風格英文摘要**：符合國際期刊規範之英文標題、單段結構化摘要與檢索關鍵詞 |
+| [`docs/process-log.md`](docs/process-log.md) | **重構歷程與 Prompt 使用紀錄**：完整收錄三階段規範 Prompt 原文與成果對應紀錄模板 |
 | [`DESIGN.md`](DESIGN.md) | **系統技術設計**：8 大核心元件、Planner 動態決策樹、Algorithm 1/2 虛擬碼、GUIDE 評估計畫 |
 | [`startup.sh`](startup.sh) | **營運自動化 - 開發啟動 SOP**：自動拉取更新、驗證 Node/OpenSpec 環境、檢查規格並提示接續工作 |
 | [`ending.sh`](ending.sh) | **營運自動化 - 開發交接 SOP**：全面自動執行 `openspec validate`、檢查 Tasks 完成度、自動 Commit 並 Push |

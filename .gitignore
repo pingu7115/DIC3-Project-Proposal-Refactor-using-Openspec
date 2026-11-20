@@ -18,3 +18,5 @@ venv/
 
 # 參考文獻全文（僅本機閱讀用，不上傳）
 docs/papers/
+
+docs/teacher-ref/
